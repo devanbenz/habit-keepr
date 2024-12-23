@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		07F0DBBA2D164D1A005EAC32 /* PostgresNIO in Frameworks */ = {isa = PBXBuildFile; productRef = 07F0DBB92D164D1A005EAC32 /* PostgresNIO */; };
+		07F0DBBC2D164D1A005EAC32 /* _ConnectionPoolModule in Frameworks */ = {isa = PBXBuildFile; productRef = 07F0DBBB2D164D1A005EAC32 /* _ConnectionPoolModule */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		07BBBE892D164A2D0037234D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -35,16 +40,6 @@
 			path = "habit-keepr";
 			sourceTree = "<group>";
 		};
-		07BBBE8B2D164A2D0037234D /* habit-keeprTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "habit-keeprTests";
-			sourceTree = "<group>";
-		};
-		07BBBE952D164A2D0037234D /* habit-keeprUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "habit-keeprUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F0DBBC2D164D1A005EAC32 /* _ConnectionPoolModule in Frameworks */,
+				07F0DBBA2D164D1A005EAC32 /* PostgresNIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				07BBBE792D164A2B0037234D /* habit-keepr */,
-				07BBBE8B2D164A2D0037234D /* habit-keeprTests */,
-				07BBBE952D164A2D0037234D /* habit-keeprUITests */,
 				07BBBE782D164A2B0037234D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +107,8 @@
 			);
 			name = "habit-keepr";
 			packageProductDependencies = (
+				07F0DBB92D164D1A005EAC32 /* PostgresNIO */,
+				07F0DBBB2D164D1A005EAC32 /* _ConnectionPoolModule */,
 			);
 			productName = "habit-keepr";
 			productReference = 07BBBE772D164A2B0037234D /* habit-keepr.app */;
@@ -129,9 +126,6 @@
 			);
 			dependencies = (
 				07BBBE8A2D164A2D0037234D /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				07BBBE8B2D164A2D0037234D /* habit-keeprTests */,
 			);
 			name = "habit-keeprTests";
 			packageProductDependencies = (
@@ -152,9 +146,6 @@
 			);
 			dependencies = (
 				07BBBE942D164A2D0037234D /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				07BBBE952D164A2D0037234D /* habit-keeprUITests */,
 			);
 			name = "habit-keeprUITests";
 			packageProductDependencies = (
@@ -195,6 +186,9 @@
 			);
 			mainGroup = 07BBBE6E2D164A2B0037234D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				07BBBEA52D164AC80037234D /* XCRemoteSwiftPackageReference "postgres-nio" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 07BBBE782D164A2B0037234D /* Products */;
 			projectDirPath = "";
@@ -393,6 +387,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "habit-keepr/habit_keepr.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -420,6 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "habit-keepr/habit_keepr.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -549,6 +545,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		07BBBEA52D164AC80037234D /* XCRemoteSwiftPackageReference "postgres-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/postgres-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.23.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		07F0DBB92D164D1A005EAC32 /* PostgresNIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07BBBEA52D164AC80037234D /* XCRemoteSwiftPackageReference "postgres-nio" */;
+			productName = PostgresNIO;
+		};
+		07F0DBBB2D164D1A005EAC32 /* _ConnectionPoolModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07BBBEA52D164AC80037234D /* XCRemoteSwiftPackageReference "postgres-nio" */;
+			productName = _ConnectionPoolModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 07BBBE6F2D164A2B0037234D /* Project object */;
 }
